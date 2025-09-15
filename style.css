@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1602615576820-ea14cf3e476a');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 40px 50px;
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInCard 1s ease-out 0.5s forwards;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(20px) scale(1.03);
+}
+
+.greeting {
+    font-family: 'Pacifico', cursive;
+    color: #e91e63;
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: pulseText 2s infinite ease-in-out;
+}
+
+.message {
+    color: #333; /* Darkened text for better readability on a lighter bg */
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseText {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(233, 30, 99, 0.7);
+        transform: scale(1.05);
+    }
+}
